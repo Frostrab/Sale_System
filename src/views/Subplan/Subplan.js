@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import { Collapse, DatePicker } from 'antd';
+import { Collapse, DatePicker, Icon, Steps, Card } from 'antd';
 import 'antd/dist/antd.css';
 
 const Panel = Collapse.Panel;
@@ -11,14 +11,24 @@ function callback(key) {
   console.log(key);
 }
 
-const text = '';
+const Step = Steps.Step;
 
 export default class Subplan extends PureComponent {
 
   render() {
     return (
-      <div style={{marginBottom:20}}>
-        <h2 style={{marginBottom:20}}>สร้างแผนงานย่อย</h2>
+      <div style={{marginBottom:20,backgroundColor:"#FFFF88"}} >
+      <div style={{display:"flex",justifyContent:"center"}}>
+      <Card style={{ width: "50%",marginBottom:10,marginTop:10}}>
+
+     
+      <Steps>
+    <Step status="finish" title="User" icon={<Icon type="user" />} />
+    <Step status="finish" title="Approver" icon={<Icon type="solution" />} />
+    <Step status="wait" title="Done" icon={<Icon type="smile-o" />} />
+  </Steps>
+      </Card>
+      </div>
       <Collapse defaultActiveKey={['1']} onChange={callback} style={{marginBottom:20}}>
       <Panel key="1" header='รายละเอียด'>
         
@@ -183,8 +193,8 @@ export default class Subplan extends PureComponent {
       </Panel>
       </Collapse>
       
-      <Button color="warning">ย้อนกลับ</Button>{' '}
-      <Button color="primary">บันทึก</Button>{' '}
+      <Button color="warning" style={{marginBottom:10}}>ย้อนกลับ</Button>{' '}
+      <Button color="primary" style={{marginBottom:10}}>บันทึก</Button>{' '}
       </div>
     );
   }

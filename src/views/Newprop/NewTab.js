@@ -8,26 +8,42 @@ const { Column, ColumnGroup } = Table;
 
 const data = [{
   key: '1',
-  firstName: 'John',
-  lastName: 'Brown',
-  age: 32,
-  address: 'New York No. 1 Lake Park',
-  tags: ['nice', 'developer'],
+  avg1m: 0,
+  budget: 0,
+  product: 'รายรับรวม',
+  before: 0,
+  current: 0,
 }, {
   key: '2',
-  firstName: 'Jim',
-  lastName: 'Green',
-  age: 42,
-  address: 'London No. 1 Lake Park',
-  tags: ['loser'],
+  avg1m: 0,
+  budget: 0,
+  product: 'ต้นทุนส่งเสริมการขาย',
+  before: 0,
+  current: 0,
 }, {
   key: '3',
-  firstName: 'Joe',
-  lastName: 'Black',
-  age: 32,
-  address: 'Sidney No. 1 Lake Park',
-  tags: ['cool', 'teacher'],
-}];
+  avg1m: 0,
+  budget: 0,
+  product: 'สัดส่วนต (%)ต่อยอดขาย',
+  before: 0,
+  current: 0,
+},
+{
+  key: '4',
+  avg1m: 0,
+  budget: 0,
+  product: 'กำไรสุทธิ',
+  before: 0,
+  current: 0,
+},
+{
+  key: '5',
+  avg1m: 0,
+  budget: 0,
+  product: 'สัดส่วน (%) ต่อยอดขาย',
+  before: 0,
+  current: 0,
+},];
 
 export default class Newtab extends React.Component{
     render(){
@@ -35,38 +51,34 @@ export default class Newtab extends React.Component{
             <Table dataSource={data} bordered>
 
 <Column
-      title="Age"
-      dataIndex="age"
-      key="age"
+      title="ผลิตภัณฑ์"
+      dataIndex="product"
+      key="product"
       width="30%"
     />
-    <ColumnGroup title="Name">
+    <ColumnGroup title="ประมาณการยอดขาย">
       <Column
-        title="First Name"
-        dataIndex="firstName"
-        key="firstName"
+        title="เฉลี่ย 1 เดือน"
+        dataIndex="avg1m"
+        key="avg1m"
       />
       <Column
-        title="Last Name"
-        dataIndex="lastName"
-        key="lastName"
+        title="ประมาณการ"
+        dataIndex="budget"
+        key="budget"
       />
     </ColumnGroup>
-    <ColumnGroup title="Name">
+    <ColumnGroup title="ยอดขายที่เกิดขึ้นจริง">
     <Column
-      title="Address"
-      dataIndex="address"
-      key="address"
+      title="ก่อนหน้า"
+      dataIndex="before"
+      key="before"
     />
     <Column
-      title="Tags"
-      dataIndex="tags"
-      key="tags"
-      render={tags => (
-        <span>
-          {tags.map(tag => <Tag color="blue" key={tag}>{tag}</Tag>)}
-        </span>
-      )}
+      title="ปีปัจจุบัน"
+      dataIndex="current"
+      key="current"
+      
     />
   </ColumnGroup>
   </Table>

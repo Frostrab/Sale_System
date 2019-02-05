@@ -113,11 +113,11 @@ class EditableCell extends React.Component {
   }
 }
 
-export default class EditableTable extends React.Component {
+export default class EditableTable2 extends React.Component {
   constructor(props) {
     super(props);
     this.columns = [{
-      title: 'รหัสบัญชี',
+      title: 'ร้านค้า',
       dataIndex: 'AccNo',
       width: '30%',
       editable: true,
@@ -125,20 +125,27 @@ export default class EditableTable extends React.Component {
         <input type='text' />),
       
     }, {
-      title: 'รายละเอียดค่าใช้จ่าย',
+      title: 'Proposal',
       dataIndex: 'Detail',
       editable: true,
       render: () => (
         <input type='text' />),
       
     }, {
-      title: 'จำนวนเงิน',
+      title: 'รายการ',
       dataIndex: 'Total',
       editable: true,
       render: () => (
         <input type='text' />),
       
-    }];
+    }, {
+        title: 'จำนวนเงิน (Inc VAT)',
+        dataIndex: 'Cost',
+        editable: true,
+        render: () => (
+          <input type='text' />),
+        
+      }];
 
     this.state = {
       dataSource: [],
@@ -158,6 +165,7 @@ export default class EditableTable extends React.Component {
       AccNo: ``,
       Detail: '',
       Total: ``,
+      Cost:'',
     };
     this.setState({
       dataSource: [...dataSource, newData],

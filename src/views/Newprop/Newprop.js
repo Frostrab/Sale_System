@@ -1,13 +1,16 @@
 import React, { PureComponent } from 'react'
 import NewTab from './NewTab.js'
+import NewTab2 from './NewTab2.js'
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import { Collapse, DatePicker, Radio, Checkbox, Row } from 'antd';
+import { Collapse, DatePicker, Radio, Checkbox, Row, Icon, Steps, Card } from 'antd';
 import 'antd/dist/antd.css';
 
 const Panel = Collapse.Panel;
 const { MonthPicker, RangePicker } = DatePicker;
 
 const RadioGroup = Radio.Group;
+
+const Step = Steps.Step;
 
 function callback(key) {
   console.log(key);
@@ -31,8 +34,18 @@ export default class Newprop extends PureComponent {
 
   render() {
     return (
-      <div style={{marginBottom:20}}>
-        <h2 style={{marginBottom:20}}>สร้างข้อตกลงทางการค้า</h2>
+      <div style={{marginBottom:20,backgroundColor:"#FFFF88"}} >
+      <div style={{display:"flex",justifyContent:"center"}}>
+      <Card style={{ width: "50%",marginBottom:10,marginTop:10}}>
+
+     
+      <Steps>
+    <Step status="finish" title="User" icon={<Icon type="user" />} />
+    <Step status="finish" title="Approver" icon={<Icon type="solution" />} />
+    <Step status="wait" title="Done" icon={<Icon type="smile-o" />} />
+  </Steps>
+      </Card>
+      </div>
       <Collapse defaultActiveKey={['1']} onChange={callback} style={{marginBottom:20}}>
       <Panel key="1" header='รายละเอียด'>
         
@@ -129,17 +142,87 @@ export default class Newprop extends PureComponent {
             </Row>
             </Checkbox.Group>
           </FormGroup>
+          <FormGroup row>
+          <Label sm={2}>เงื่อนไข</Label>
+          <Col sm={3}>
+          <Input type="text" name="activitie" id="activitie" />
+          </Col>
+          <Label sm={2}>ผลิตภัณฑ์หลัก</Label>
+          <Col sm={3}>
+          <Input type="text" name="activitie" id="activitie" />
+          </Col>
+        </FormGroup>
+        <FormGroup row>
+          <Label sm={2}>ประมาณการยอดขาย</Label>
+          <Col sm={3}>
+          <Input type="text" name="activitie" id="activitie"  disabled/>
+          </Col>
+          <Label sm={2}>บาท</Label>
+        </FormGroup>
+        <FormGroup row>
+          <Label sm={2}>งบประมาณสนับสนุนน</Label>
+          <Col sm={3}>
+          <Input type="text" name="activitie" id="activitie"  disabled/>
+          </Col>
+          <Label sm={2}>บาท</Label>
+        </FormGroup>
+        <FormGroup row>
+          <Label sm={2}>% to Sale</Label>
+          <Col sm={3}>
+          <Input type="text" name="activitie" id="activitie"  disabled/>
+          </Col>
+          <Label sm={2}>%</Label>
+        </FormGroup>
+        <FormGroup row style={{marginBottom:30}}>
+          <Label  sm={2}>วิธีการ</Label>
+          <Col sm={7}>
+            <Input type="textarea" name="select" id="status" />
+          </Col>
+        </FormGroup>
+        <FormGroup row>
+          <Label sm={2}>อ้างอิง Proposal</Label>
+          <Col sm={3}>
+          <Input type="text" name="activitie" id="activitie" />
+          </Col>
+        </FormGroup>
+        <FormGroup check>
+        
+        <Label sm={2}>ร้านดี/เด่นดัง</Label>
+        
+        <Input type="checkbox" name="check" id="exampleCheck"/> 
+        
+        </FormGroup>
+        <FormGroup check>
+        <Label sm={2}>ร้านนาย</Label>
+        
+        <Input type="checkbox" name="check" id="exampleCheck"/> 
+        
+        </FormGroup>
+        <FormGroup row>
+          <Label sm={2}>ชื่อร้านนาย</Label>
+          <Col sm={3}>
+          <Input type="text" name="activitie" id="activitie" />
+          </Col>
+        </FormGroup>
+        <Button color="secondary" sm={2}>กำหนดผลิตภัณฑ์</Button>{' '}
       </Form>
       
 
       </Panel>
-      <Panel header='เป้าหมาย'>
+      <Panel key='2' header='รายละเอียดค่าใช้จ่าย'>
+      <NewTab2 />
+      </Panel>
+      <Panel key='3' header='เป้าหมาย'>
+      <div style={{marginBottom:20}}>
+      <Button color="secondary">ประมวลผล</Button>{' '}
+      </div>
       <NewTab />
       </Panel>
       </Collapse>
       
-      <Button color="warning">ย้อนกลับ</Button>{' '}
-      <Button color="primary">บันทึก</Button>{' '}
+      <Button color="warning" style={{marginBottom:10}}>ย้อนกลับ</Button>{' '}
+      <Button color="primary" style={{marginBottom:10}}>บันทึก</Button>{' '}
+      <Button color="secondary" style={{marginBottom:10}}>ส่งอนุมัติ</Button>{' '}
       </div>
     );
   }

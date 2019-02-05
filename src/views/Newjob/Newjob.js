@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react'
 import Uploads from './Uploads'
 import Tables from './Tables'
+import Tables2 from './Tables2'
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import { Collapse, DatePicker, Upload, Icon, message } from 'antd';
+import { Collapse, DatePicker, Upload, Icon, message, Steps, Card } from 'antd';
 import 'antd/dist/antd.css';
 
 const Panel = Collapse.Panel;
@@ -13,14 +14,23 @@ function callback(key) {
   console.log(key);
 }
 
-const text = '';
-
+const Step = Steps.Step;
 export default class Newjob extends PureComponent {
 
   render() {
     return (
-      <div style={{marginBottom:20}}>
-        <h2 style={{marginBottom:20}}>สร้างใบขออนุมัติ Job</h2>
+      <div style={{marginBottom:20,backgroundColor:"#FFFF88"}} >
+      <div style={{display:"flex",justifyContent:"center"}}>
+      <Card style={{ width: "50%",marginBottom:10,marginTop:10}}>
+
+     
+      <Steps>
+    <Step status="finish" title="User" icon={<Icon type="user" />} />
+    <Step status="finish" title="Approver" icon={<Icon type="solution" />} />
+    <Step status="wait" title="Done" icon={<Icon type="smile-o" />} />
+  </Steps>
+      </Card>
+      </div>
       <Collapse defaultActiveKey={['1']} onChange={callback} style={{marginBottom:20}}>
       <Panel key="1" header='รายละเอียด'>
         
@@ -116,19 +126,24 @@ export default class Newjob extends PureComponent {
         <Label >มีข้อตกลงทางการค้า</Label>
         </Col>
         </FormGroup>
+        
       </Form>
       </Panel>
-      <Panel  key="2" header='รายละเอียดค่าใช้จ่าย'>
-      <Tables></Tables>
+      <Panel  key="2" header='ร้านค้าร่วมรายการ'>
+      <Tables2 />
       </Panel>
-      <Panel  key="3" header='เอกสารแนบ'>
+      <Panel  key="3" header='รายละเอียดค่าใช้จ่าย'>
+      <Tables />
+      </Panel>
+      <Panel  key="4" header='เอกสารแนบ'>
         <Uploads></Uploads>
       </Panel>     
       
       </Collapse>
       
-      <Button color="warning">ย้อนกลับ</Button>{' '}
-      <Button color="primary">บันทึก</Button>{' '}
+      <Button color="warning" style={{marginBottom:10}}>ย้อนกลับ</Button>{' '}
+      <Button color="primary" style={{marginBottom:10}}>บันทึก</Button>{' '}
+      <Button color="secondary" style={{marginBottom:10}}>ส่งอนุมัติ</Button>{' '}
       </div>
     );
   }
