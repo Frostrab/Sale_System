@@ -34,9 +34,9 @@ export default class Newprop extends PureComponent {
 
   render() {
     return (
-      <div style={{marginBottom:20,backgroundColor:"#FFFF88"}} >
+      <div style={{marginBottom:20,backgroundColor:"#e6f7ff"}} >
       <div style={{display:"flex",justifyContent:"center"}}>
-      <Card style={{ width: "50%",marginBottom:10,marginTop:10}}>
+      <Card style={{ width: "50%",marginBottom:10,marginTop:10,}}>
 
      
       <Steps>
@@ -111,7 +111,7 @@ export default class Newprop extends PureComponent {
           <Col sm={3}>
           <DatePicker />
           </Col>
-        <Label for="activitie" sm={2}>ระยะเวลาที่สิ้นสุด</Label>
+        <Label for="activitie" sm={1}>ระยะเวลาที่สิ้นสุด</Label>
           <Col sm={3}>
           <DatePicker />
           </Col>  
@@ -131,9 +131,9 @@ export default class Newprop extends PureComponent {
          
         </FormGroup>
         <FormGroup row>
-          <Label for="cost" sm={2}>วัตถุประสงค์</Label>
-          <Checkbox.Group style={{ width: '100%' }} onChange={onChange}>
-            <Row>
+          <Label sm={2}>วัตถุประสงค์</Label>
+          <Checkbox.Group style={{ width: '20%' }} onChange={onChange}>
+            <Row >
                 <Col span={8}><Checkbox value="A">1.เพื่อสร้างความสัมพันธุ์ที่ดีกับร้านค้า</Checkbox></Col>
                 <Col span={8}><Checkbox value="B">2.เพื่อเพิ่มยอดขายสินค้า</Checkbox></Col>
                 <Col span={8}><Checkbox value="C">3.เพื่อสกัดกั้นคู่แข่ง</Checkbox></Col>
@@ -147,7 +147,7 @@ export default class Newprop extends PureComponent {
           <Col sm={3}>
           <Input type="text" name="activitie" id="activitie" />
           </Col>
-          <Label sm={2}>ผลิตภัณฑ์หลัก</Label>
+          <Label sm={1}>ผลิตภัณฑ์หลัก</Label>
           <Col sm={3}>
           <Input type="text" name="activitie" id="activitie" />
           </Col>
@@ -185,25 +185,8 @@ export default class Newprop extends PureComponent {
           <Input type="text" name="activitie" id="activitie" />
           </Col>
         </FormGroup>
-        <FormGroup check>
         
-        <Label sm={2}>ร้านดี/เด่นดัง</Label>
         
-        <Input type="checkbox" name="check" id="exampleCheck"/> 
-        
-        </FormGroup>
-        <FormGroup check>
-        <Label sm={2}>ร้านนาย</Label>
-        
-        <Input type="checkbox" name="check" id="exampleCheck"/> 
-        
-        </FormGroup>
-        <FormGroup row>
-          <Label sm={2}>ชื่อร้านนาย</Label>
-          <Col sm={3}>
-          <Input type="text" name="activitie" id="activitie" />
-          </Col>
-        </FormGroup>
         <Button color="secondary" sm={2}>กำหนดผลิตภัณฑ์</Button>{' '}
       </Form>
       

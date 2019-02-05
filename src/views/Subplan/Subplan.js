@@ -17,7 +17,7 @@ export default class Subplan extends PureComponent {
 
   render() {
     return (
-      <div style={{marginBottom:20,backgroundColor:"#FFFF88"}} >
+      <div style={{marginBottom:20,backgroundColor:"#e6f7ff"}} >
       <div style={{display:"flex",justifyContent:"center"}}>
       <Card style={{ width: "50%",marginBottom:10,marginTop:10}}>
 
@@ -50,7 +50,7 @@ export default class Subplan extends PureComponent {
           <Col sm={3}>
             <Input type="select" name="activitie" id="activitie" defaultValue="กรุณาเลือกกลุ่มกิจกรรม" />
           </Col>
-          <Label sm={2}>แผนงานย่อย</Label>
+          <Label sm={1}>แผนงานย่อย</Label>
           <Col sm={3}>
             <Input type="text" name="activitie" id="activitie" />
           </Col>
@@ -73,7 +73,7 @@ export default class Subplan extends PureComponent {
             <Input type="select" name="select" id="exampleSelect" />
           </Col>
       
-          <Label for="budget" sm={2}>การคุมงบ</Label>
+          <Label for="budget" sm={1}>การคุมงบ</Label>
           <Col sm={3}>
             <Input type="select" name="select" id="exampleSelect" />
           </Col>

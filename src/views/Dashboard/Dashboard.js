@@ -1,4 +1,4 @@
-import React, { Component, lazy, Suspense } from 'react';
+import React, { Component } from 'react';
 import { Bar, Line } from 'react-chartjs-2';
 import {
   Badge,
@@ -20,10 +20,18 @@ import {
   Row,
   Table,
 } from 'reactstrap';
+import Widget03 from '../../views/Widgets/Widget03'
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities'
 
-const Widget03 = lazy(() => import('../../views/Widgets/Widget03'));
+import 'antd/dist/antd.css';
+import { Modal } from 'antd';
+import Tableshow2 from '../Tableshow2/Tableshow2';
+
+import Qur from './Qur';
+import Years from './Years';
+import Mounths from './Mount';
+
 
 const brandPrimary = getStyle('--primary')
 const brandSuccess = getStyle('--success')
@@ -462,7 +470,29 @@ class Dashboard extends Component {
     this.state = {
       dropdownOpen: false,
       radioSelected: 2,
+      showContent:1,
     };
+  }
+
+  onHandleClick1 = ()=>{
+    this.setState({showContent:1})
+    console.log("test")
+  }
+  onHandleClick2 = ()=> {
+    this.setState({showContent:2})
+  }
+  onHandleClick3 = () => {
+    this.setState({showContent:3})
+  }
+  renderSwitch(param) {
+    switch(param) {
+      case 1:
+        return <Mounths />
+        case 2:
+        return <Qur />
+      default:
+        return <Years />;
+    }
   }
 
   toggle() {
@@ -477,31 +507,80 @@ class Dashboard extends Component {
     });
   }
 
-  loading = () => <div className="animated fadeIn pt-1 text-center">Loading...</div>
+  state = { visible1: false ,visible2: false,visible3: false}
+
+  showModal1 = () => {
+    console.log('Clicked')
+    this.setState({
+      visible1: true,
+    });
+  }
+
+  handleOk1 = (e) => {
+    console.log(e);
+    this.setState({
+      visible1: false,
+    });
+  }
+
+  handleCancel1 = (e) => {
+    console.log(e);
+    this.setState({
+      visible1: false,
+    });
+  }
+
+  showModal2 = () => {
+    this.setState({
+      visible2: true,
+    });
+  }
+
+  handleOk2 = (e) => {
+    console.log(e);
+    this.setState({
+      visible2: false,
+    });
+  }
+
+  handleCancel2 = (e) => {
+    console.log(e);
+    this.setState({
+      visible2: false,
+    });
+  }
+
+  showModal3 = () => {
+    this.setState({
+      visible3: true,
+    });
+  }
+
+  handleOk3 = (e) => {
+    console.log(e);
+    this.setState({
+      visible3: false,
+    });
+  }
+
+  handleCancel3 = (e) => {
+    console.log(e);
+    this.setState({
+      visible3: false,
+    });
+  }
 
   render() {
 
     return (
       <div className="animated fadeIn">
         <Row>
-          <Col xs="12" sm="6" lg="3">
-            <Card className="text-white bg-info">
+          <Col xs="12" sm="6" lg="4">
+            <Card className="text-white bg-info" style={{cursor:"pointer"}} onClick={this.showModal1} >
               <CardBody className="pb-0">
-                <ButtonGroup className="float-right">
-                  <ButtonDropdown id='card1' isOpen={this.state.card1} toggle={() => { this.setState({ card1: !this.state.card1 }); }}>
-                    <DropdownToggle caret className="p-0" color="transparent">
-                      <i className="icon-settings"></i>
-                    </DropdownToggle>
-                    <DropdownMenu right>
-                      <DropdownItem>Action</DropdownItem>
-                      <DropdownItem>Another action</DropdownItem>
-                      <DropdownItem disabled>Disabled action</DropdownItem>
-                      <DropdownItem>Something else here</DropdownItem>
-                    </DropdownMenu>
-                  </ButtonDropdown>
-                </ButtonGroup>
-                <div className="text-value">3000</div>
-                <div>เอกสาร PO</div>
+              
+                <div className="text-value">9,123</div>
+                <div>รายเดือน</div>
               </CardBody>
               <div className="chart-wrapper mx-3" style={{ height: '70px' }}>
                 <Line data={cardChartData2} options={cardChartOpts2} height={70} />
@@ -509,23 +588,12 @@ class Dashboard extends Component {
             </Card>
           </Col>
 
-          <Col xs="12" sm="6" lg="3">
-            <Card className="text-white bg-primary">
+          <Col xs="12" sm="6" lg="4">
+            <Card className="text-white bg-primary" style={{cursor:"pointer"}} onClick={this.showModal2}>
               <CardBody className="pb-0">
-                <ButtonGroup className="float-right">
-                  <Dropdown id='card2' isOpen={this.state.card2} toggle={() => { this.setState({ card2: !this.state.card2 }); }}>
-                    <DropdownToggle className="p-0" color="transparent">
-                      <i className="icon-location-pin"></i>
-                    </DropdownToggle>
-                    <DropdownMenu right>
-                      <DropdownItem>Action</DropdownItem>
-                      <DropdownItem>Another action</DropdownItem>
-                      <DropdownItem>Something else here</DropdownItem>
-                    </DropdownMenu>
-                  </Dropdown>
-                </ButtonGroup>
-                <div className="text-value">4000</div>
-                <div>Members online</div>
+               
+                <div className="text-value">22,643</div>
+                <div>รายไตรมาส</div>
               </CardBody>
               <div className="chart-wrapper mx-3" style={{ height: '70px' }}>
                 <Line data={cardChartData1} options={cardChartOpts1} height={70} />
@@ -533,240 +601,71 @@ class Dashboard extends Component {
             </Card>
           </Col>
 
-          <Col xs="12" sm="6" lg="3">
-            <Card className="text-white bg-warning">
+          <Col xs="12" sm="6" lg="4">
+            <Card className="text-white bg-warning" style={{cursor:"pointer"}}  onClick={this.showModal3}>
               <CardBody className="pb-0">
-                <ButtonGroup className="float-right">
-                  <Dropdown id='card3' isOpen={this.state.card3} toggle={() => { this.setState({ card3: !this.state.card3 }); }}>
-                    <DropdownToggle caret className="p-0" color="transparent">
-                      <i className="icon-settings"></i>
-                    </DropdownToggle>
-                    <DropdownMenu right>
-                      <DropdownItem>Action</DropdownItem>
-                      <DropdownItem>Another action</DropdownItem>
-                      <DropdownItem>Something else here</DropdownItem>
-                    </DropdownMenu>
-                  </Dropdown>
-                </ButtonGroup>
-                <div className="text-value">6000</div>
-                <div>Members online</div>
+               
+                <div className="text-value">22,643</div>
+                <div>รายปี</div>
               </CardBody>
               <div className="chart-wrapper" style={{ height: '70px' }}>
                 <Line data={cardChartData3} options={cardChartOpts3} height={70} />
               </div>
             </Card>
           </Col>
+        </Row>
+        
 
-          <Col xs="12" sm="6" lg="3">
-            <Card className="text-white bg-danger">
-              <CardBody className="pb-0">
-                <ButtonGroup className="float-right">
-                  <ButtonDropdown id='card4' isOpen={this.state.card4} toggle={() => { this.setState({ card4: !this.state.card4 }); }}>
-                    <DropdownToggle caret className="p-0" color="transparent">
-                      <i className="icon-settings"></i>
-                    </DropdownToggle>
-                    <DropdownMenu right>
-                      <DropdownItem>Action</DropdownItem>
-                      <DropdownItem>Another action</DropdownItem>
-                      <DropdownItem>Something else here</DropdownItem>
-                    </DropdownMenu>
-                  </ButtonDropdown>
-                </ButtonGroup>
-                <div className="text-value">5000</div>
-                <div>Members online</div>
-              </CardBody>
-              <div className="chart-wrapper mx-3" style={{ height: '70px' }}>
-                <Bar data={cardChartData4} options={cardChartOpts4} height={70} />
-              </div>
-            </Card>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <Card>
-              
-              <CardFooter>
-                <Row className="text-center">
-                  <Col sm={12} md className="mb-sm-2 mb-0">
-                    <div className="text-muted">Visits</div>
-                    <strong>29.703 Users (40%)</strong>
-                    <Progress className="progress-xs mt-2" color="success" value="40" />
-                  </Col>
-                  <Col sm={12} md className="mb-sm-2 mb-0 d-md-down-none">
-                    <div className="text-muted">Unique</div>
-                    <strong>24.093 Users (20%)</strong>
-                    <Progress className="progress-xs mt-2" color="info" value="20" />
-                  </Col>
-                  <Col sm={12} md className="mb-sm-2 mb-0">
-                    <div className="text-muted">Pageviews</div>
-                    <strong>78.706 Views (60%)</strong>
-                    <Progress className="progress-xs mt-2" color="warning" value="60" />
-                  </Col>
-                  <Col sm={12} md className="mb-sm-2 mb-0">
-                    <div className="text-muted">New Users</div>
-                    <strong>22.123 Users (80%)</strong>
-                    <Progress className="progress-xs mt-2" color="danger" value="80" />
-                  </Col>
-                  <Col sm={12} md className="mb-sm-2 mb-0 d-md-down-none">
-                    <div className="text-muted">Bounce Rate</div>
-                    <strong>Average Rate (40.15%)</strong>
-                    <Progress className="progress-xs mt-2" color="primary" value="40" />
-                  </Col>
-                </Row>
-              </CardFooter>
-            </Card>
-          </Col>
-        </Row>
 
         <Row>
           <Col>
             <Card>
               <CardHeader>
-                Traffic {' & '} Sales
+              สรุปงบแผนงานเทียบรายเดือน               
               </CardHeader>
               <CardBody>
                 <Row>
                   <Col xs="12" md="6" xl="6">
                     <Row>
-                      <Col sm="6">
-                        <div className="callout callout-info">
-                          <small className="text-muted">New Clients</small>
+                      <Col sm="4">
+                        <div className="callout callout-info"  style={{cursor:"pointer"}} onClick={this.onHandleClick1}>
+                          <small className="text-muted">รายเดือน</small>
                           <br />
                           <strong className="h4">9,123</strong>
-                          <div className="chart-wrapper">
-                            <Line data={makeSparkLineData(0, brandPrimary)} options={sparklineChartOpts} width={100} height={30} />
-                          </div>
                         </div>
                       </Col>
-                      <Col sm="6">
-                        <div className="callout callout-danger">
-                          <small className="text-muted">Recurring Clients</small>
+                      <Col sm="4">
+                        <div className="callout callout-danger" style={{cursor:"pointer"}} onClick={this.onHandleClick2}>
+                          <small className="text-muted">รายไตรมาส</small>
                           <br />
                           <strong className="h4">22,643</strong>
-                          <div className="chart-wrapper">
-                            <Line data={makeSparkLineData(1, brandDanger)} options={sparklineChartOpts} width={100} height={30} />
-                          </div>
+                        </div>
+                      </Col>
+                      <Col sm="4">
+                        <div className="callout callout-danger" style={{cursor:"pointer"}} onClick={this.onHandleClick3}>
+                          <small className="text-muted">รายปี</small>
+                          <br />
+                          <strong className="h4">22,643</strong>
                         </div>
                       </Col>
                     </Row>
                     <hr className="mt-0" />
-                    <div className="progress-group mb-4">
-                      <div className="progress-group-prepend">
-                        <span className="progress-group-text">
-                          Monday
-                        </span>
-                      </div>
-                      <div className="progress-group-bars">
-                        <Progress className="progress-xs" color="info" value="34" />
-                        <Progress className="progress-xs" color="danger" value="78" />
-                      </div>
-                    </div>
-                    <div className="progress-group mb-4">
-                      <div className="progress-group-prepend">
-                        <span className="progress-group-text">
-                        Tuesday
-                        </span>
-                      </div>
-                      <div className="progress-group-bars">
-                        <Progress className="progress-xs" color="info" value="56" />
-                        <Progress className="progress-xs" color="danger" value="94" />
-                      </div>
-                    </div>
-                    <div className="progress-group mb-4">
-                      <div className="progress-group-prepend">
-                        <span className="progress-group-text">
-                        Wednesday
-                        </span>
-                      </div>
-                      <div className="progress-group-bars">
-                        <Progress className="progress-xs" color="info" value="12" />
-                        <Progress className="progress-xs" color="danger" value="67" />
-                      </div>
-                    </div>
-                    <div className="progress-group mb-4">
-                      <div className="progress-group-prepend">
-                        <span className="progress-group-text">
-                        Thursday
-                        </span>
-                      </div>
-                      <div className="progress-group-bars">
-                        <Progress className="progress-xs" color="info" value="43" />
-                        <Progress className="progress-xs" color="danger" value="91" />
-                      </div>
-                    </div>
-                    <div className="progress-group mb-4">
-                      <div className="progress-group-prepend">
-                        <span className="progress-group-text">
-                        Friday
-                        </span>
-                      </div>
-                      <div className="progress-group-bars">
-                        <Progress className="progress-xs" color="info" value="22" />
-                        <Progress className="progress-xs" color="danger" value="73" />
-                      </div>
-                    </div>
-                    <div className="progress-group mb-4">
-                      <div className="progress-group-prepend">
-                        <span className="progress-group-text">
-                        Saturday
-                        </span>
-                      </div>
-                      <div className="progress-group-bars">
-                        <Progress className="progress-xs" color="info" value="53" />
-                        <Progress className="progress-xs" color="danger" value="82" />
-                      </div>
-                    </div>
-                    <div className="progress-group mb-4">
-                      <div className="progress-group-prepend">
-                        <span className="progress-group-text">
-                        Sunday
-                        </span>
-                      </div>
-                      <div className="progress-group-bars">
-                        <Progress className="progress-xs" color="info" value="9" />
-                        <Progress className="progress-xs" color="danger" value="69" />
-                      </div>
-                    </div>
-                    <div className="legend text-center">
-                      <small>
-                        <sup className="px-1"><Badge pill color="info">&nbsp;</Badge></sup>
-                        New clients
-                        &nbsp;
-                        <sup className="px-1"><Badge pill color="danger">&nbsp;</Badge></sup>
-                        Recurring clients
-                      </small>
-                    </div>
+                  {
+                    this.renderSwitch(this.state.showContent)
+                  }
                   </Col>
                   <Col xs="12" md="6" xl="6">
                     <Row>
                       <Col sm="6">
-                        <div className="callout callout-warning">
-                          <small className="text-muted">Pageviews</small>
-                          <br />
-                          <strong className="h4">78,623</strong>
-                          <div className="chart-wrapper">
-                            <Line data={makeSparkLineData(2, brandWarning)} options={sparklineChartOpts} width={100} height={30} />
-                          </div>
-                        </div>
-                      </Col>
-                      <Col sm="6">
-                        <div className="callout callout-success">
-                          <small className="text-muted">Organic</small>
-                          <br />
-                          <strong className="h4">49,123</strong>
-                          <div className="chart-wrapper">
-                            <Line data={makeSparkLineData(3, brandSuccess)} options={sparklineChartOpts} width={100} height={30} />
-                          </div>
-                        </div>
+                       
                       </Col>
                     </Row>
-                    <hr className="mt-0" />
                     <ul>
                       <div className="progress-group">
                         <div className="progress-group-header">
                           <i className="icon-user progress-group-icon"></i>
-                          <span className="title">Male</span>
-                          <span className="ml-auto font-weight-bold">43%</span>
+                          <span className="title">กรุงเทพและปริมณฑล</span>
+                          <span className="ml-auto font-weight-bold">63%</span>
                         </div>
                         <div className="progress-group-bars">
                           <Progress className="progress-xs" color="warning" value="43" />
@@ -774,8 +673,8 @@ class Dashboard extends Component {
                       </div>
                       <div className="progress-group mb-5">
                         <div className="progress-group-header">
-                          <i className="icon-user-female progress-group-icon"></i>
-                          <span className="title">Female</span>
+                          <i className="icon-user progress-group-icon"></i>
+                          <span className="title">จังหวัดอื่นๆ</span>
                           <span className="ml-auto font-weight-bold">37%</span>
                         </div>
                         <div className="progress-group-bars">
@@ -792,48 +691,47 @@ class Dashboard extends Component {
                           <Progress className="progress-xs" color="success" value="56" />
                         </div>
                       </div>
-                      <div className="progress-group">
-                        <div className="progress-group-header">
-                          <i className="icon-social-facebook progress-group-icon"></i>
-                          <span className="title">Facebook</span>
-                          <span className="ml-auto font-weight-bold">51,223 <span className="text-muted small">(15%)</span></span>
-                        </div>
-                        <div className="progress-group-bars">
-                          <Progress className="progress-xs" color="success" value="15" />
-                        </div>
-                      </div>
-                      <div className="progress-group">
-                        <div className="progress-group-header">
-                          <i className="icon-social-twitter progress-group-icon"></i>
-                          <span className="title">Twitter</span>
-                          <span className="ml-auto font-weight-bold">37,564 <span className="text-muted small">(11%)</span></span>
-                        </div>
-                        <div className="progress-group-bars">
-                          <Progress className="progress-xs" color="success" value="11" />
-                        </div>
-                      </div>
-                      <div className="progress-group">
-                        <div className="progress-group-header">
-                          <i className="icon-social-linkedin progress-group-icon"></i>
-                          <span className="title">LinkedIn</span>
-                          <span className="ml-auto font-weight-bold">27,319 <span className="text-muted small">(8%)</span></span>
-                        </div>
-                        <div className="progress-group-bars">
-                          <Progress className="progress-xs" color="success" value="8" />
-                        </div>
-                      </div>
-                      <div className="divider text-center">
-                        <Button color="link" size="sm" className="text-muted" data-toggle="tooltip" data-placement="top"
-                                title="" data-original-title="show more"><i className="icon-options"></i></Button>
+                      <div>
+                        ASV
                       </div>
                     </ul>
                   </Col>
                 </Row>
                 <br />
-                              </CardBody>
+              
+              </CardBody>
             </Card>
           </Col>
         </Row>
+
+        <Modal width={900} style={{left:60}}
+          footer={null}
+          title="รายเดือน"
+          visible={this.state.visible1}
+          onOk={this.handleOk1}
+          onCancel={this.handleCancel1}
+        >
+        <Tableshow2 />
+        </Modal>
+        <Modal width={900} style={{left:60}}
+          footer={null}
+          title="รายไตรมาส"
+          visible={this.state.visible2}
+          onOk={this.handleOk2}
+          onCancel={this.handleCancel2}
+        >
+        <Tableshow2 />
+        </Modal>
+        <Modal width={900} style={{left:60}}
+          footer={null}
+          title="รายปี"
+          visible={this.state.visible3}
+          onOk={this.handleOk3}
+          onCancel={this.handleCancel3}
+        >
+        <Tableshow2 />
+        </Modal>
+
       </div>
     );
   }

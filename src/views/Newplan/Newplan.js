@@ -17,7 +17,7 @@ export default class Newplan extends PureComponent {
 
   render() {
     return (
-      <div style={{marginBottom:20,backgroundColor:"#FFFF88"}} >
+      <div style={{marginBottom:20,backgroundColor:"#e6f7ff"}} >
       <div style={{display:"flex",justifyContent:"center"}}>
       <Card style={{ width: "50%",marginTop:10,marginBottom:10}}>
 
@@ -44,7 +44,7 @@ export default class Newplan extends PureComponent {
           <Col sm={3}>
             <Input type="text" name="activitie" id="activitie" />
           </Col>
-          <Label for="plan" sm={2}>แผนงาน</Label>
+          <Label for="plan" sm={1}>แผนงาน</Label>
           <Col sm={3}>
             <Input type="select" name="select" id="exampleSelect" />
           </Col>
@@ -67,7 +67,7 @@ export default class Newplan extends PureComponent {
             <Input type="select" name="cost" id="exampleSelect" />
           </Col>
       
-          <Label for="budget" sm={2}>การคุมงบ</Label>
+          <Label for="budget" sm={1}>การคุมงบ</Label>
           <Col sm={3}>
             <Input type="select" name="budget" id="exampleSelect" />
           </Col>

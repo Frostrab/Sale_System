@@ -50,14 +50,14 @@ export default class Newtab extends React.Component{
         return(
             <Table dataSource={data} bordered>
 
-<Column
+<Column 
       title="ผลิตภัณฑ์"
       dataIndex="product"
       key="product"
       width="30%"
     />
     <ColumnGroup title="ประมาณการยอดขาย">
-      <Column
+      <Column 
         title="เฉลี่ย 1 เดือน"
         dataIndex="avg1m"
         key="avg1m"
