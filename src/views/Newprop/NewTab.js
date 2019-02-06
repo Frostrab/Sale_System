@@ -1,8 +1,7 @@
 
 import React from 'react';
-import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
-import { Table, Divider, Tag } from 'antd';
+import { Table, } from 'antd';
 
 const { Column, ColumnGroup } = Table;
 

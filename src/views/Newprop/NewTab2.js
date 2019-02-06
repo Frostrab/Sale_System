@@ -1,12 +1,9 @@
 
 import React from 'react';
-import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
 import {
-  Table, Input, Button, Popconfirm, Form,
+  Table,
 } from 'antd';
-
-const FormItem = Form.Item;
 
 
 
@@ -25,7 +22,7 @@ export default class EditableTable2 extends React.Component {
       dataIndex: 'Budget',
       editable: true,
       render: () => (
-        <input type='text' defaultValue='0'/>),
+        <input types='text' defaultValue='0'/>),
       
     }, {
       title: 'ยอดใช้จ่าย',

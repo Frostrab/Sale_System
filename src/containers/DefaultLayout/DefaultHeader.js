@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { Badge,Nav, NavItem, NavLink,Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-import { AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
+import { AppSidebarToggler } from '@coreui/react';
 // import logo from '../../assets/img/brand/logo.svg'
-import logo from '../../assets/img/brand/11.png'
+//import logo from '../../assets/img/brand/11.png'
 
-import sygnet from '../../assets/img/brand/sygnet.svg'
 
 const propTypes = {
   children: PropTypes.node,
@@ -28,7 +26,7 @@ class DefaultHeader extends Component {
           full={{ src: logo, width: 70, height: 50, }}
         /> */}
         {/* <AppSidebarToggler className="d-md-down-none" display="lg" /> */}
-        <h3>Ampolfood</h3><img src={logo} width={70} height={50} />
+        <h3>Leader Planet</h3>
         <AppSidebarToggler className="d-md-down-none" display="lg" />
 
         <Nav className="ml-auto" navbar>

@@ -2,12 +2,11 @@ import React, { PureComponent } from 'react'
 import Uploads from './Uploads'
 import Tables from './Tables'
 import Tables2 from './Tables2'
-import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import { Collapse, DatePicker, Upload, Icon, message, Steps, Card } from 'antd';
+import { Col, Button, Form, FormGroup, Label, Input, } from 'reactstrap';
+import { Collapse, DatePicker, Icon, Steps, Card } from 'antd';
 import 'antd/dist/antd.css';
 
 const Panel = Collapse.Panel;
-const { MonthPicker, RangePicker } = DatePicker;
 
 
 function callback(key) {

@@ -1,12 +1,6 @@
 import React from 'react';
 import DefaultLayout from './containers/DefaultLayout';
 
-const Inbox = React.lazy(() => import('./views/Inbox'))
-const PO = React.lazy(()=> import('./views/PO'))
-const Product = React.lazy(() => import('./views/Product'))
-const Supplier = React.lazy(()=> import('./views/Supplier'))
-const NewItem = React.lazy(()=> import('./views/NewItems'))
-const Material = React.lazy(()=> import('./views/Material'))
 
 const Breadcrumbs = React.lazy(() => import('./views/Base/Breadcrumbs'));
 const Cards = React.lazy(() => import('./views/Base/Cards'));
@@ -53,12 +47,6 @@ const Newprop = React.lazy(() => import('./views/Newprop/Newprop.js'));
 const routes = [
   { path: '/', exact: true, name: 'Home', component: DefaultLayout },
 
-  { path: '/inbox', exact: true, name: 'Inbox',component: Inbox},
-  { path: '/po', exact:true, name: 'PO', component: PO},
-  { path: '/new-item' , exact: true, name: 'NewItem', component: NewItem},
-  { path: '/supplier', exact: true, name: 'Supplier', component: Supplier},
-  { path:  '/product',exact:true,name:'Product',component: Product},
-  { path:  '/Material-Master-Maintenance',exact:true,name:'Material-Maintenance',component: Material},
   
 
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },

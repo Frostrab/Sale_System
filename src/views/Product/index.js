@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
-import { Col, Row, Form, FormGroup, Label, Input, Card, CardBody, CardHeader,FormText } from 'reactstrap';
-import { Steps, Button, message,Icon,Tabs,Checkbox  } from 'antd';
+import { Col,  Form, FormGroup, Label, Input, Card, CardBody, CardHeader, } from 'reactstrap';
+import { Steps, Button, Icon,Tabs,Checkbox  } from 'antd';
 import Upload from  './Upload'
 import PickerDate from '../../components/Datepicker/index'
 const Step = Steps.Step;

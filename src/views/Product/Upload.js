@@ -1,8 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import "antd/dist/antd.css";
 import "./index.css";
-import { Upload, Button, Icon, message } from "antd";
+import { Upload, Button, Icon, } from "antd";
 // import reqwest from "reqwest";
 
 export default class UploadItem extends React.Component {
@@ -45,7 +44,7 @@ export default class UploadItem extends React.Component {
   };
 
   render() {
-    const { uploading, fileList } = this.state;
+    const { fileList } = this.state;
     const props = {
       listType: "text",
       onRemove: file => {

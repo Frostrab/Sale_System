@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react'
-import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Col, Button, Form, FormGroup, Label, Input, } from 'reactstrap';
 import { Collapse, DatePicker, Icon, Steps, Card } from 'antd';
 import 'antd/dist/antd.css';
 
 const Panel = Collapse.Panel;
-const { MonthPicker, RangePicker } = DatePicker;
 
 
 function callback(key) {
@@ -56,7 +55,7 @@ export default class Newplan extends PureComponent {
             <Input type="select" name="select" id="exampleSelect" />
           </Col>
           <Col>
-          <Label sm={4}></Label>
+          <Label sm={2}></Label>
           <Input type="checkbox" name="check" id="exampleCheck"/> 
           <Label for="checkbox" >หน่วยงานภายใต้</Label>
           </Col>

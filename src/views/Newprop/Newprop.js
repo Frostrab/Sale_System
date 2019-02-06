@@ -1,12 +1,11 @@
 import React, { PureComponent } from 'react'
 import NewTab from './NewTab.js'
 import NewTab2 from './NewTab2.js'
-import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Col, Button, Form, FormGroup, Label, Input, } from 'reactstrap';
 import { Collapse, DatePicker, Radio, Checkbox, Row, Icon, Steps, Card } from 'antd';
 import 'antd/dist/antd.css';
 
 const Panel = Collapse.Panel;
-const { MonthPicker, RangePicker } = DatePicker;
 
 const RadioGroup = Radio.Group;
 
@@ -132,7 +131,7 @@ export default class Newprop extends PureComponent {
         </FormGroup>
         <FormGroup row>
           <Label sm={2}>วัตถุประสงค์</Label>
-          <Checkbox.Group style={{ width: '20%' }} onChange={onChange}>
+          <Checkbox.Group style={{ width: '30%' }} onChange={onChange}>
             <Row >
                 <Col span={8}><Checkbox value="A">1.เพื่อสร้างความสัมพันธุ์ที่ดีกับร้านค้า</Checkbox></Col>
                 <Col span={8}><Checkbox value="B">2.เพื่อเพิ่มยอดขายสินค้า</Checkbox></Col>

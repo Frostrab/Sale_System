@@ -1,6 +1,5 @@
 
 import React from 'react';
-import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
 import './Newjob.css';
 import { Upload, Icon, message } from 'antd';

@@ -1,10 +1,9 @@
 
 import React from 'react';
-import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
 import './Newjob.css';
 import {
-  Table, Input, Button, Popconfirm, Form,
+  Table, Input, Button, Form,
 } from 'antd';
 
 const FormItem = Form.Item;
