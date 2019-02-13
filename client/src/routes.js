@@ -1,19 +1,6 @@
 import React from 'react';
 import DefaultLayout from './containers/DefaultLayout';
 
-const Dashboard = React.lazy(() => import('./views/Dashboard'));
-const Inbox = React.lazy(() => import('./views/Inbox'))
-const PO = React.lazy(()=> import('./views/PO'))
-const Product = React.lazy(() => import('./views/Product'))
-const Supplier = React.lazy(()=> import('./views/Supplier'))
-const NewItem = React.lazy(()=> import('./views/NewItems'))
-const Material = React.lazy(()=> import('./views/Material'))
-const EmpSelf = React.lazy(()=>import('./views/EmpSelf'))
-const EmpDev = React.lazy(()=>import('./views/EmpDev'))
-const Kpi = React.lazy(()=> import('./views/Kpi'))
-const TotalScore = React.lazy(()=> import('./views/Summry'))
-const EmpSelfMgr = React.lazy(()=> import('./views/EmpSelfMgr'))
-// const Graph = React.lazy(() => import('./views/Graph'))
 
 const Breadcrumbs = React.lazy(() => import('./views/Base/Breadcrumbs'));
 const Cards = React.lazy(() => import('./views/Base/Cards'));
@@ -37,6 +24,7 @@ const ButtonDropdowns = React.lazy(() => import('./views/Buttons/ButtonDropdowns
 const ButtonGroups = React.lazy(() => import('./views/Buttons/ButtonGroups'));
 const Buttons = React.lazy(() => import('./views/Buttons/Buttons'));
 const Charts = React.lazy(() => import('./views/Charts'));
+const Dashboard = React.lazy(() => import('./views/Dashboard'));
 const CoreUIIcons = React.lazy(() => import('./views/Icons/CoreUIIcons'));
 const Flags = React.lazy(() => import('./views/Icons/Flags'));
 const FontAwesome = React.lazy(() => import('./views/Icons/FontAwesome'));
@@ -50,25 +38,27 @@ const Widgets = React.lazy(() => import('./views/Widgets/Widgets'));
 const Users = React.lazy(() => import('./views/Users/Users'));
 const User = React.lazy(() => import('./views/Users/User'));
 
+const Newplan = React.lazy(() => import('./views/Newplan/Newplan.js'));
+const Subplan = React.lazy(() => import('./views/Subplan/Subplan.js'));
+const Newjob = React.lazy(() => import('./views/Newjob/Newjob.js'));
+const Newprop = React.lazy(() => import('./views/Newprop/Newprop.js'));
+const Reportbudget = React.lazy(() => import('./views/Reportbudget'));
+const Managebudget = React.lazy(() => import('./views/Managebudget'));
+const Uploadbudget = React.lazy(() => import('./views/Uploadbudget'));
+const Budgetin = React.lazy(() => import('./views/Budgetin'));
+const Activitie = React.lazy(() => import('./views/Activitie'));
+const Inbox = React.lazy(() => import('./views/Inbox'));
+
+
+const Inbox1 = React.lazy(() => import('./views/Inbox1'));
+
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
   { path: '/', exact: true, name: 'Home', component: DefaultLayout },
 
-  { path: '/inbox', exact: true, name: 'Inbox',component: Inbox},
-  { path: '/po', exact:true, name: 'PO', component: PO},
-  { path: '/new-item' , exact: true, name: 'NewItem', component: NewItem},
-  { path: '/supplier', exact: true, name: 'Supplier', component: Supplier},
-  { path:  '/product',exact:true,name:'Product',component: Product},
-  { path:  '/material-master-maintenance',exact:true,name:'Material-Maintenance',component: Material},
-  { path:  '/emp-self',exact:true,name:'Employee-Dev',component: EmpSelf},
-  { path:  '/emp-dev',exact:true,name:'Employee-Self',component: EmpDev},
-  { path:  '/kpi',exact:true,name:'Organization-KPI',component: Kpi},
-  { path: '/summry',exact: true,name: 'Summry', component: TotalScore},
-  { path: '/emp-mgr-self',exact: true,name: 'Employee-MGR-Self', component: EmpSelfMgr},
-
+  
 
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
-  
   { path: '/theme', exact: true, name: 'Theme', component: Colors },
   { path: '/theme/colors', name: 'Colors', component: Colors },
   { path: '/theme/typography', name: 'Typography', component: Typography },
@@ -108,6 +98,21 @@ const routes = [
   { path: '/charts', name: 'Charts', component: Charts },
   { path: '/users', exact: true,  name: 'Users', component: Users },
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
+
+  { path: '/newplan', exact: true, name: 'Newplan', component: Newplan },
+  { path: '/subplan', exact: true, name: 'Subplan', component: Subplan },
+  { path: '/newjob', exact: true, name: 'Newjob', component: Newjob },
+  { path: '/newprop', exact: true, name: 'Newprop', component: Newprop },
+  { path: '/reportbudget', exact: true, name: 'Reportbudget', component: Reportbudget },
+  { path: '/managebudget', exact: true, name: 'Managebudget', component: Managebudget },
+  { path: '/uploadbudget', exact: true, name: 'Uploadbudget', component: Uploadbudget },
+  { path: '/budgetin', exact: true, name: 'Budgetin', component: Budgetin },
+  { path: '/activitie', exact: true, name: 'Activitie', component: Activitie },
+  { path: '/inbox', exact: true, name: 'Inbox', component: Inbox },
+
+  
+  { path: '/inbox1', exact: true, name: 'Inbox1', component: Inbox1 },
+  
 ];
 
 export default routes;

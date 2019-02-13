@@ -19,39 +19,46 @@ export default class List2 extends PureComponent{
         
         data1:[{
             
-                key: '1',
-                listname: 'สมชาย_1',
-                status: 'On tack'
-              },
-              {
-            
-                key: '2',
-                listname: 'สมชาย_2',
-                status: 'On tack'
-              },
-              {
-            
-                key: '3',
-                listname: 'สมชาย_3',
-                status: 'On tack'
-              },
-              {
-            
-                key: '10',
-                listname: 'สมชาย_10',
-                status: 'On tack'
-              },],
+          key: '1',
+          listname: 'เอก สมหมาย',
+          
+        },{
+        
+          key: '2',
+          listname: 'สมคิด อาจหาญ',
+        },
+        {
+          key: '3',
+          listname: 'ปราการ ใจกล้า',
+        },
+         {
+          key: '4',
+          listname: 'กิจการ รุ่งเรือง',
+        }, {
+          key: '5',
+          listname: 'ประกิจ บุญอำนวย',
+        }, {
+          key: '6',
+          listname: 'สมคิด กิจบุญมา',
+        }, {
+          key: '7',
+          listname: 'เขมประภัทร ลี',
+        },{
+          key: '8',
+          listname: 'กิจจา เพชรแท้',
+        },{
+          key: '9',
+          listname: 'ธนากร มงคลเลิศ',
+        }, {
+          key: '10',
+          listname: 'กศิน สุริยะกล้า',
+        },],
            col1:[{
             title: 'รายชื่อ',
             dataIndex: 'listname',
             key: 'listname',
             width:'70%',
             
-          }, {
-            title: 'Status',
-            dataIndex: 'status',
-            key: 'status',
-            width:'20%',
           },{
             title:'',
             width:'10%',
@@ -87,3 +94,4 @@ export default class List2 extends PureComponent{
     }
 }
           
+

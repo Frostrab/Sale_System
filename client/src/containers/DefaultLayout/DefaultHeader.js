@@ -28,7 +28,7 @@ class DefaultHeader extends Component {
           full={{ src: logo, width: 70, height: 50, }}
         /> */}
         {/* <AppSidebarToggler className="d-md-down-none" display="lg" /> */}
-        <h3>HRLeaderplanet</h3>
+        <h3>Sale_System</h3>
         {/* <img src={logo} width={70} height={50} /> */}
         <AppSidebarToggler className="d-md-down-none" display="lg" />
 

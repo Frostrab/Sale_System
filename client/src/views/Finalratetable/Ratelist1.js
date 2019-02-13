@@ -5,6 +5,9 @@ import { Select } from 'antd';
 
 const Option = Select.Option;
 
+
+
+
 function handleChange(value) {
   console.log(`selected ${value}`);
 }
@@ -17,14 +20,19 @@ function handleFocus() {
   console.log('focus');
 }
 export default class Ratelist1 extends PureComponent{
+
+
+
     render(){
         return(
             <div>
 <Select
+
+    defaultValue="A"
+
     disabled
     showSearch
     style={{ width: 50 }}
-    defaultValue="B"
     optionFilterProp="children"
     onChange={handleChange}
     onFocus={handleFocus}

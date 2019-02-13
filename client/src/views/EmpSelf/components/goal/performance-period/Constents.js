@@ -52,7 +52,7 @@ export default class  Contents  extends PureComponent{
           </Col>
           <Col md={4}>
             <FormGroup>
-              <Label for="exampleEmail">Start date</Label>
+              <Label for="exampleEmail">Measurement</Label>
               <DatePicker />
             </FormGroup>
           </Col>

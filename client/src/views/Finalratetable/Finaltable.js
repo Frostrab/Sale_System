@@ -2,7 +2,7 @@
 import React,{PureComponent} from 'react';
 import 'antd/dist/antd.css';
 import { Table, Pagination, Input, Card } from 'antd';
-import Graph from '../Graph'
+
 //import './index.css';
 import Ratelist from './Ratelist';
 import Ratelist1 from './Ratelist1';
@@ -10,14 +10,7 @@ import Ratelist1 from './Ratelist1';
 
 const { Column, ColumnGroup } = Table;
 
-const comment = {
-  date: new Date(),
-  text: 'I hope you enjoy learning React!',
-  author: {
-    name: 'Hello Kitty',
-    avatarUrl: 'https://placekitten.com/g/64/64',
-  },
-};
+let grade =["A","B","C"]
 
 export default class Finaltable extends PureComponent{
 
@@ -28,16 +21,17 @@ export default class Finaltable extends PureComponent{
          data2:[{
             
                 key: '1',
-                name: 'สมชาย_1',
+                name: 'เอก สมหมาย',
                 result:'A',
                 md1:'A',
                 md2:'B',
                 md3:'B',
                 
+                
               },{
             
                 key: '2',
-                name: 'สมชาย_2',
+                name: 'สมคิด อาจหาญ',
                 result:'A',
                 md1:'A',
                 md2:'A',
@@ -45,7 +39,7 @@ export default class Finaltable extends PureComponent{
               },
               {
                 key: '3',
-                name: 'สมชาย_3',
+                name: 'ปราการ ใจกล้า',
                 result:'B',
                 md1:'A',
                 md2:'B',
@@ -53,49 +47,49 @@ export default class Finaltable extends PureComponent{
               },
                {
                 key: '4',
-                name: 'สมชาย_4',
+                name: 'กิจการ รุ่งเรือง',
                 result:'A',
                 md1:'B',
                 md2:'A',
                 md3:'B',
               }, {
                 key: '5',
-                name: 'สมชาย_5',
+                name: 'ประกิจ บุญอำนวย',
                 result:'B',
                 md1:'A',
                 md2:'B',
                 md3:'B',
               }, {
                 key: '6',
-                name: 'สมชาย_6',
+                name: 'สมคิด กิจบุญมา',
                 result:'B',
                 md1:'A',
                 md2:'A',
                 md3:'B',
               }, {
                 key: '7',
-                name: 'สมชาย_7',
+                name: 'เขมประภัทร ลี',
                 result:'C',
                 md1:'C',
                 md2:'C',
                 md3:'B',
               },{
                 key: '8',
-                name: 'สมชาย_8',
+                name: 'กิจจา เพชรแท้',
                 result:'B',
                 md1:'A',
                 md2:'B',
                 md3:'B',
               },{
                 key: '9',
-                name: 'สมชาย_9',
+                name: 'ธนากร มงคลเลิศ',
                 result:'A',
                 md1:'A',
                 md2:'A',
                 md3:'B',
               }, {
                 key: '10',
-                name: 'สมชาย_10',
+                name: 'กศิน สุริยะกล้า',
                 result:'B',
                 md1:'B',
                 md2:'B',
@@ -154,7 +148,6 @@ export default class Finaltable extends PureComponent{
     render(){
         return(
             <div style={{marginTop:20}}>
-            <Graph />
 <Card
       
       style={{ width: "100%" }}

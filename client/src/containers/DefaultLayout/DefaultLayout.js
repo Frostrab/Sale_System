@@ -4,6 +4,7 @@ import { Container } from 'reactstrap';
 
 import {
   AppAside,
+  AppBreadcrumb,
   AppFooter,
   AppHeader,
   AppSidebar,
@@ -49,9 +50,9 @@ class DefaultLayout extends Component {
             <AppSidebarFooter />
             <AppSidebarMinimizer />
           </AppSidebar>
-          <main className="main"  style={{backgroundColor:"#eeccff"}}>
+          <main className="main" style={{backgroundColor:"#feffcc"}}>
             {/* <AppBreadcrumb appRoutes={routes}/> */}
-            <Container fluid>
+            <Container fluid >
               <Suspense fallback={this.loading()}>
                 <Switch>
                   {routes.map((route, idx) => {
